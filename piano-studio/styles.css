@@ -1,0 +1,45 @@
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,sans-serif;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+html,body{height:100%;width:100%;background:#050810;color:#e6edf3;overflow:hidden;position:fixed;overscroll-behavior:none;user-select:none;-webkit-user-select:none;touch-action:manipulation;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+body{display:flex;flex-direction:column}
+#bar{padding:8px 10px;background:#111735;display:flex;gap:6px;align-items:center;border-bottom:1px solid #1e2540;flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+#bar::-webkit-scrollbar{display:none}
+#logo{font-weight:900;font-size:14px;background:linear-gradient(135deg,#a855f7,#00d4ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-right:4px;white-space:nowrap}
+select,button{padding:9px 12px;background:#1a2040;color:#e6edf3;border:1px solid #2a3560;border-radius:8px;font:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;min-height:38px;touch-action:manipulation}
+select:active,button:active{background:#2a3560}
+.btn-play{background:linear-gradient(135deg,#a855f7,#00d4ff);border:none;color:#fff;min-width:44px;font-size:16px}
+.btn-stop{background:linear-gradient(135deg,#ff5b6b,#a81f42);border:none;color:#fff;min-width:44px;font-size:16px}
+#wrap{flex:1;position:relative;background:radial-gradient(circle at 50% 0%,#131a35 0%,#060912 60%);overflow:hidden;min-height:0;touch-action:none}
+#piano{position:absolute;inset:0;touch-action:none}
+#octave{position:absolute;top:8px;left:8px;display:flex;gap:4px;align-items:center;background:rgba(10,14,26,.85);padding:3px 6px;border-radius:8px;border:1px solid #2a3560;z-index:10}
+#octave button{padding:6px 12px;font-size:13px;min-height:32px;min-width:40px}
+#octave span{color:#a855f7;font-weight:800;font-size:12px;padding:0 8px;min-width:52px;text-align:center}
+#status{position:absolute;top:8px;right:8px;background:rgba(10,14,26,.85);padding:5px 10px;border-radius:8px;border:1px solid #2a3560;font-size:11px;color:#ffd93b;font-weight:700;z-index:10;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.k{position:absolute;bottom:0;cursor:pointer;touch-action:none;user-select:none;transition:background .05s,transform .04s}
+.k.w{background:linear-gradient(180deg,#fff,#f0f2f8 55%,#d8dce8);border:1px solid #7a8498;border-bottom:none;border-radius:0 0 6px 6px;box-shadow:inset 0 -6px 10px rgba(0,0,0,.1),0 4px 8px rgba(0,0,0,.5);z-index:1}
+.k.w .n{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:10px;color:#7a8294;font-weight:700;pointer-events:none}
+.k.w.on{background:linear-gradient(180deg,#d0b0ff,#a890e0);transform:translateY(2px);box-shadow:inset 0 -3px 6px rgba(120,80,200,.5),0 0 30px rgba(168,85,247,.9)}
+.k.w.hint{background:linear-gradient(180deg,#fff8c4,#ffd93b);box-shadow:0 0 40px rgba(255,217,59,1),inset 0 0 25px rgba(255,217,59,.7);animation:hp .6s ease-in-out infinite alternate}
+.k.b{background:linear-gradient(180deg,#4a4f60 0%,#1a1d28 40%,#05070c 100%);border:1px solid #000;border-radius:0 0 4px 4px;box-shadow:inset 0 -5px 8px rgba(0,0,0,.7),0 5px 10px rgba(0,0,0,.7);z-index:2}
+.k.b .n{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:8px;color:#a4a8b4;pointer-events:none}
+.k.b.on{background:linear-gradient(180deg,#a890e0,#6b4ec0);transform:translateY(2px);box-shadow:0 0 30px rgba(168,85,247,.95)}
+.k.b.hint{background:linear-gradient(180deg,#ffe066,#d4a017);box-shadow:0 0 40px rgba(255,217,59,1);animation:hp .6s ease-in-out infinite alternate}
+@keyframes hp{from{filter:brightness(1)}to{filter:brightness(1.35)}}
+@media (max-width:480px){
+  #bar{padding:6px 8px;gap:5px}
+  #logo{font-size:12px}
+  select,button{padding:8px 10px;font-size:12px;min-height:36px}
+  #status{font-size:10px;padding:4px 8px}
+  #octave button{padding:5px 9px;min-width:34px}
+  .k.w .n{font-size:9px;bottom:6px}
+  .k.b .n{font-size:7px}
+}
+@media (orientation:landscape) and (max-height:500px){
+  #bar{padding:4px 8px;gap:4px}
+  #logo{display:none}
+  select,button{padding:6px 9px;font-size:11px;min-height:30px}
+  #status{top:4px;right:4px;font-size:10px;padding:3px 7px}
+  #octave{top:4px;left:4px;padding:2px 5px}
+  #octave button{padding:4px 8px;min-width:30px}
+  .k.w .n{font-size:9px;bottom:5px}
+  .k.b .n{display:none}
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#050810">
+<title>Piano Studio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="bar">
+  <div id="logo">♪ Piano</div>
+  <select id="inst">
+    <option value="grand">Grand</option>
+    <option value="electric">Electric</option>
+    <option value="bright">Bright</option>
+    <option value="musicbox">Music Box</option>
+    <option value="organ">Organ</option>
+    <option value="harp">Harp</option>
+    <option value="synth">Synth</option>
+  </select>
+  <select id="speed">
+    <option value="1">1x</option>
+    <option value="1.5">1.5x</option>
+    <option value="2" selected>2x</option>
+    <option value="3">3x</option>
+    <option value="4">4x</option>
+  </select>
+  <select id="song"><option value="">Free Play</option></select>
+  <button class="btn-play" id="play">▶</button>
+  <button class="btn-stop" id="stop">■</button>
+</div>
+
+<div id="wrap">
+  <div id="octave">
+    <button id="oct-down">◀</button>
+    <span id="oct-label">C3</span>
+    <button id="oct-up">▶</button>
+  </div>
+  <div id="status">Ready</div>
+  <div id="piano"></div>
+</div>
+
+<script src="songs.js"></script>
+<script src="audio.js"></script>
+<script src="piano.js"></script>
+<script src="player.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
